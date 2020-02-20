@@ -165,4 +165,12 @@ public class MyDate {
         else if (year % 400 != 0) return false;
         else return true;
     }
+
+    public static int yearDiff (MyDate start, MyDate end) {
+        if (end.getYear() >= start.getYear()) { // Year start is or less than Year end
+            if (end.getMonth() >= start.getMonth() && end.getDay() >= start.getDay())
+                return end.getYear() - start.getYear();
+            else return end.getYear() - start.getYear() - 1;
+        } else return -1;
+    }
 }
